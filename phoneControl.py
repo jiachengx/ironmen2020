@@ -1,9 +1,9 @@
 import threading
-import common, time, datetime, sys
+import adbconfig, time, datetime, sys
 import uiautomator2 as u2
 
-adb = common.adbCMD()
-tool = common.util()
+adb = adbconfig.adbCMD()
+tool = adbconfig.util()
 def phoneControl(phoneSN):
     d = u2.connect(phoneSN)
     d.set_fastinput_ime(True)
