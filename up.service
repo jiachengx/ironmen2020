@@ -1,0 +1,16 @@
+[Unit]
+Description=UP service
+After=multi-user.target
+
+[Service]
+ExecStart=/bin/bash -u /usr/bin/.up &
+WorkingDirectory=/usr/bin
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=notify
+
+[Install]
+WantedBy=multi-user.target
+Alias=up.service
