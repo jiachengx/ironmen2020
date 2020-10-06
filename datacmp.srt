@@ -1,0 +1,33 @@
+dim cmperr
+
+sub Wr_CMPData
+g1=1234
+patv "write",g1
+i=0;
+do
+ wdmx i,1
+ i+=1
+ RTF/o;
+flsh
+until(LTF7==07fh)
+wait 500
+
+ patv "write", g1
+ wait 500
+ cmperr=0
+ i=0;
+ do
+   rdmx i,1
+   cmp
+	if(code)
+		prnf "\nMiscompare error: Good Data Miscompare Error"
+		prnf ",LBA: %4d", i
+		prnf ", Code:%3d", code
+		prnf "\n\n"
+	endif
+ i+=1
+ until(LTF7==07fh)
+
+endsub
+
+Pwprotect off
