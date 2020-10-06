@@ -118,7 +118,7 @@ def main():
     log_folder_name = ".//logs//" + datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d_%H%M%S') + \
                       "//" + diskSN + "//"
     print (" %s ver. %s" % (sys.argv[0], ver))
-    print "GO\n"
+    print ("GO\n")
     if cmp == 0:
         print ("Disk: [%s]" % (disk))
     if cmp == 1:
@@ -157,7 +157,7 @@ def main():
         thread_md5.start()
         time.sleep(1)
         thread_md5.join()
-        print "Finish"
+        print( "Finish")
         log.toLog("Finish")
 
     if cmp == 1:
