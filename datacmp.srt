@@ -20,7 +20,7 @@ wait 500
    rdmx i,1
    cmp
 	if(code)
-		prnf "\nMiscompare error: Good Data Miscompare Error"
+		prnf "\nGood Data is missing. data compare error"
 		prnf ",LBA: %4d", i
 		prnf ", Code:%3d", code
 		prnf "\n\n"
